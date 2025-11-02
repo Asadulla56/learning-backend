@@ -33,7 +33,7 @@ app.get('/', (req: Request, res: Response) => {
   res.status(200).json({ message: 'Server is running successfully' });
 });
 
-// global error handler
+// global error handling
 app.use(globalErrorHandler);
 
 export default app;

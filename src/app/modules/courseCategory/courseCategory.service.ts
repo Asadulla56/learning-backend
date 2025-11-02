@@ -2,25 +2,25 @@ import { ICategory } from "./courseCategory.interface";
 import { Category } from "./courseCategory.model";
 
 
-// CREATE → নতুন category তৈরি করে
+// CREATE 
 const createCategoryServices = async (payload: ICategory): Promise<ICategory> => {
   const newCategory = await Category.create(payload);
   return newCategory;
 };
 
-// READ → সব category নিয়ে আসে
+// READ 
 const getAllCategoriesServices = async (): Promise<ICategory[]> => {
   const categories = await Category.find({});
   return categories;
 };
 
-// READ → একক category আইডি দিয়ে নিয়ে আসে
+// READ 
 const getSingleCategoryServices = async (id: number): Promise<ICategory | null> => {
   const category = await Category.findOne({ id });
   return category;
 };
 
-// UPDATE → category আপডেট করে আইডি দিয়ে
+// UPDATE 
 const updateCategoryServices = async (
   id: number,
   payload: Partial<ICategory>
@@ -29,7 +29,7 @@ const updateCategoryServices = async (
   return updatedCategory;
 };
 
-// DELETE → category ডিলিট করে (বা soft delete দিলে সেখানে লজিক দেবেন)
+// DELETE
 const deleteCategoryServices = async (id: number): Promise<ICategory | null> => {
   const deletedCategory = await Category.findOneAndDelete({ id });
   return deletedCategory;

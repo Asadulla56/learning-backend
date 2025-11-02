@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { CategoryService } from './courseCategory.service';
 
 
-// CREATE Controller → নতুন category তৈরি
+// CREATE 
 export const createCategoryController = async (req: Request, res: Response) => {
   try {
     const category = await CategoryService.createCategoryServices(req.body);
@@ -17,7 +17,7 @@ export const createCategoryController = async (req: Request, res: Response) => {
   }
 };
 
-// READ Controller → সব category নিয়ে আসে
+// READ Controller 
 export const getAllCategoriesController = async (req: Request, res: Response) => {
   try {
     const categories = await CategoryService.getAllCategoriesServices();
@@ -27,7 +27,7 @@ export const getAllCategoriesController = async (req: Request, res: Response) =>
   }
 };
 
-// READ Controller → একক category আইডি দিয়ে নিয়ে আসে
+// READ Controller 
 export const getSingleCategoryController = async (req: Request, res: Response) => {
   try {
     const id = Number(req.params.id);
@@ -39,7 +39,7 @@ export const getSingleCategoryController = async (req: Request, res: Response) =
   }
 };
 
-// UPDATE Controller → category আপডেট করে আইডি দিয়ে
+// UPDATE Controller 
 export const updateCategoryController = async (req: Request, res: Response) => {
   try {
     const id = Number(req.params.id);
@@ -51,7 +51,7 @@ export const updateCategoryController = async (req: Request, res: Response) => {
   }
 };
 
-// DELETE Controller → category ডিলিট করে
+// DELETE Controller
 export const deleteCategoryController = async (req: Request, res: Response) => {
   try {
     const id = Number(req.params.id);

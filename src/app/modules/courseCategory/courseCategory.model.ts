@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 import { ICategory } from './courseCategory.interface';
 
 
-// Mongoose Schema: ডাটাবেজে Category কিভাবে সংরক্ষণ হবে তা নির্ধারণ করেeeeeeeeeee
+// Mongoose Schema
 const categorySchema = new Schema<ICategory>(
   {
     id: { type: Number, required: true, unique: true },
@@ -11,7 +11,7 @@ const categorySchema = new Schema<ICategory>(
     icon: { type: String, required: true },
   },
   {
-    timestamps: true, // createdAt এবং updatedAt ফিল্ড অটোমেটিক যোগ করবে
+    timestamps: true,
   }
 );
 

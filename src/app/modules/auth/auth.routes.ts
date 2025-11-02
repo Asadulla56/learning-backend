@@ -1,4 +1,3 @@
-// src/app/modules/auth/auth.routes.ts
 import express from 'express';
 import { loginController } from './auth.controller';
 import validateRequest from '../../middlewares/validateRequest';

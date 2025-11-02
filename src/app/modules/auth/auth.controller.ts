@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// src/app/modules/auth/auth.controller.ts
 import { Request, Response } from 'express';
-import { AuthService } from './suth.service';
+import { AuthService } from './auth.service';
 
 
 export const loginController = async (req: Request, res: Response) => {

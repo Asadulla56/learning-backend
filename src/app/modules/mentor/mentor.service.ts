@@ -2,22 +2,22 @@
 import { IMentor } from './mentor.interface';
 import { Mentor } from './mentor.model';
 
-// CREATE → নতুন Mentor তৈরি
+// CREATE 
 const createMentorServices = async (payload: IMentor): Promise<IMentor> => {
   return await Mentor.create(payload);
 };
 
-// READ ALL → সব Mentor দেখা
+// READ ALL 
 const getAllMentorsServices = async (): Promise<IMentor[]> => {
   return await Mentor.find();
 };
 
-// READ SINGLE → নির্দিষ্ট Mentor দেখা
+// READ SINGLE 
 const getSingleMentorServices = async (id: string): Promise<IMentor | null> => {
   return await Mentor.findOne({ id });
 };
 
-// UPDATE → Mentor আপডেট
+// UPDATE 
 const updateMentorServices = async (
   id: string,
   payload: Partial<IMentor>
@@ -25,7 +25,7 @@ const updateMentorServices = async (
   return await Mentor.findOneAndUpdate({ id }, payload, { new: true });
 };
 
-// DELETE → Mentor ডিলিট
+// DELETE 
 const deleteMentorServices = async (id: string): Promise<IMentor | null> => {
   return await Mentor.findOneAndDelete({ id });
 };

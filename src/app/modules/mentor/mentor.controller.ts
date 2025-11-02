@@ -2,7 +2,7 @@
 import { Request, Response } from 'express';
 import { MentorService } from './mentor.service';
 
-// CREATE → নতুন Mentor তৈরি
+// CREATE 
 export const createMentorController = async (req: Request, res: Response) => {
   try {
     const mentor = await MentorService.createMentorServices(req.body);
@@ -16,7 +16,7 @@ export const createMentorController = async (req: Request, res: Response) => {
   }
 };
 
-// READ ALL → সব Mentor
+// READ ALL 
 export const getAllMentorsController = async (req: Request, res: Response) => {
   try {
     const mentors = await MentorService.getAllMentorsServices();
@@ -30,7 +30,7 @@ export const getAllMentorsController = async (req: Request, res: Response) => {
   }
 };
 
-// READ SINGLE → নির্দিষ্ট Mentor
+// READ SINGLE 
 export const getSingleMentorController = async (req: Request, res: Response) => {
   try {
     const mentor = await MentorService.getSingleMentorServices(req.params.id);
@@ -50,7 +50,7 @@ export const getSingleMentorController = async (req: Request, res: Response) => 
   }
 };
 
-// UPDATE → Mentor আপডেট
+// UPDATE 
 export const updateMentorController = async (req: Request, res: Response) => {
   try {
     const updatedMentor = await MentorService.updateMentorServices(
@@ -73,7 +73,7 @@ export const updateMentorController = async (req: Request, res: Response) => {
   }
 };
 
-// DELETE → Mentor ডিলিট
+// DELETE 
 export const deleteMentorController = async (req: Request, res: Response) => {
   try {
     const deletedMentor = await MentorService.deleteMentorServices(req.params.id);

@@ -3,24 +3,21 @@ import { ICourse } from './course.interface';
 
 
 
-// CREATE → নতুন কোর্স তৈরি করার সার্ভিস
+// CREATE 
 const createCourseServices = async (payload: ICourse): Promise<ICourse> => {
-
-
-  // ৩. যদি mentor ও category উভয়টাই থাকে, তাহলে কোর্স তৈরি করা হবে
   const newCourse = await Course.create(payload);
   return newCourse;
 };
 
 
-// READ → সব কোর্স রিটার্ন করে (mentor ও category সহ)
+// READ → 
 const getAllCoursesServices = async (): Promise<ICourse[]> => {
   const courses = await Course.find({})
   return courses;
 };
 
 
-// READ (SINGLE) → একটি নির্দিষ্ট কোর্স রিটার্ন করে (mentor ও category সহ)
+// READ (SINGLE) 
 const getSingleCourseServices = async (id: number): Promise<ICourse | null> => {
   const course = await Course.findOne({ id })
     .populate('mentor')
@@ -29,7 +26,7 @@ const getSingleCourseServices = async (id: number): Promise<ICourse | null> => {
 };
 
 
-// UPDATE → নির্দিষ্ট কোর্স আপডেট করার সার্ভিস
+// UPDATE 
 const updateCourseServices = async (id: number, payload: Partial<ICourse>): Promise<ICourse | null> => {
   const updatedCourse = await Course.findOneAndUpdate({ id }, payload, { new: true })
     .populate('mentor')
@@ -38,7 +35,7 @@ const updateCourseServices = async (id: number, payload: Partial<ICourse>): Prom
 };
 
 
-// DELETE → নির্দিষ্ট কোর্স ডিলিট করার সার্ভিস
+// DELETE 
 const deleteCourseServices = async (id: number): Promise<ICourse | null> => {
   const deletedCourse = await Course.findOneAndDelete({ id })
     .populate('mentor')
@@ -46,8 +43,6 @@ const deleteCourseServices = async (id: number): Promise<ICourse | null> => {
   return deletedCourse;
 };
 
-
-// সব সার্ভিস এক্সপোর্ট করা হচ্ছে
 export const CourseService = {
   createCourseServices,
   getAllCoursesServices,

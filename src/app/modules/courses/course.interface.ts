@@ -5,19 +5,14 @@ export interface ICourse {
   title: string;
   slug: string;
 
-    // শুধু category এর রেফারেন্স (ObjectId)
   category:Types.ObjectId;
-  
   type: string;
   image: string;
   fee: string;
   rating: number;
   totalRating: number;
   totalStudentsEnroll: number;
-
-  // শুধু Mentor এর রেফারেন্স (ObjectId)
   mentor: Types.ObjectId;
-
   technology: string;
   courseStart: string;
   durationMonth: number;
